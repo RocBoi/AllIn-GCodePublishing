@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Site locked for indexing. Contact gcode@atlquez.com for legitimate access inquiries.
