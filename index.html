@@ -1,147 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RocBoi Quez - All In | GCode Publishing</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
   <style>
     body {
-      background: linear-gradient(to right, #0f0f0f, #1f1f1f);
-      color: #fff;
-      font-family: 'Arial', sans-serif;
-      text-align: center;
       margin: 0;
-      padding: 2rem;
-      background-image: url('animated-bg.gif'); /* Optional animated background */
-      background-size: cover;
-      background-attachment: fixed;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: #f7b731;
-      text-shadow: 2px 2px #000;
-    }
-
-    h2 {
-      color: #9c88ff;
-    }
-
-    iframe {
-      margin: 1rem auto;
-      border-radius: 10px;
-      max-width: 90%;
-    }
-
-    button {
-      background-color: #f7b731;
-      border: none;
-      padding: 12px 24px;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-      margin-top: 20px;
-      border-radius: 6px;
-    }
-
-    button:hover {
-      background-color: #ffeaa7;
-    }
-
-    .social-share img {
-      width: 40px;
-      margin: 0 10px;
-      vertical-align: middle;
-    }
-
-    .qr-code {
-      margin-top: 30px;
-    }
-
-    form {
-      margin-top: 30px;
-    }
-
-    input, textarea {
-      padding: 10px;
-      width: 80%;
-      margin: 5px 0;
-      border-radius: 6px;
-      border: none;
-    }
-
-    input[type="submit"] {
-      background-color: #9c88ff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 600% 600%;
+      animation: animateBackground 20s ease infinite;
+    }
+    @keyframes animateBackground {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background-color: rgba(0,0,0,0.7);
+    }
+    header img {
+      max-height: 80px;
+      margin-right: 10px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin: 20px 0;
+      text-align: center;
+      text-shadow: 0 0 10px #f0f;
+    }
+    .video, .spotify {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+    .video iframe, .spotify iframe {
+      border-radius: 12px;
+      box-shadow: 0 0 20px #000;
+    }
+    .share-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+    .share-buttons a {
+      margin: 10px;
+      text-decoration: none;
+      font-size: 1.5rem;
+    }
+    form {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+    form button {
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+      background: #444;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
       font-weight: bold;
-      cursor: pointer;
+    }
+    .qr-code {
+      text-align: center;
+      margin: 20px;
+    }
+    .qr-code img {
+      width: 200px;
     }
   </style>
 </head>
 <body>
 
-  <h1>RocBoi Quez – All In</h1>
-  <h2>Powered by GCode Publishing | Slattland Records | Distributed by BentleyRecords.io</h2>
+<header>
+  <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" />
+  <h1>RocBoi Quez - All In</h1>
+</header>
 
-  <!-- YouTube Embed -->
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/5tZX-LmG5Ac" 
-  title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+<div class="video">
+  <iframe width="360" height="215" src="https://www.youtube.com/embed/5tZX-LmG5Ac" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+</div>
 
-  <!-- Spotify Embed -->
-  <iframe style="border-radius:12px" 
-  src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator" 
-  width="560" height="152" frameborder="0" allowfullscreen 
-  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<div class="spotify">
+  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator" width="360" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
+</div>
 
-  <!-- MetaMask Web3 Connect -->
-  <button onclick="connectMetaMask()">Connect MetaMask</button>
-  <p>BTC & ETH Tip Address: <strong>allin-gcodepublishing.cb.id</strong></p>
+<div class="share-buttons">
+  <h2>Share This Hit:</h2>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https://rocboi.github.io/AllIn-GCodePublishing/" target="_blank">Facebook</a>
+  <a href="https://twitter.com/intent/tweet?url=https://rocboi.github.io/AllIn-GCodePublishing/&text=Check+out+this+heat+from+RocBoi+Quez!" target="_blank">Twitter/X</a>
+  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://rocboi.github.io/AllIn-GCodePublishing/" target="_blank">LinkedIn</a>
+</div>
 
-  <script>
-    async function connectMetaMask() {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-          alert('Connected: ' + accounts[0]);
-        } catch (error) {
-          console.error(error);
-        }
-      } else {
-        alert('MetaMask is not installed. Please install it to use this feature.');
+<div class="qr-code">
+  <img src="qr-code.png" alt="Scan QR to visit" />
+  <p>Scan this code to bump it on your phone!</p>
+</div>
+
+<form action="mailto:gcode@atlquez.com" method="POST" enctype="text/plain">
+  <h2>Send Your Love to RocBoi Quez:</h2>
+  <input type="text" name="name" placeholder="Your Name" required />
+  <input type="email" name="email" placeholder="Your Email" required />
+  <textarea name="message" rows="4" placeholder="Your Message to RocBoi Quez..." required></textarea>
+  <button type="submit">Send Message</button>
+</form>
+
+<!-- Web3 Wallet Connection -->
+<script>
+  async function connectWallet() {
+    if (window.ethereum) {
+      try {
+        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+        alert(`Connected: ${accounts[0]}`);
+      } catch (err) {
+        alert('Connection failed');
       }
+    } else {
+      alert('MetaMask not detected!');
     }
-  </script>
-
-  <!-- Social Share Buttons -->
-  <div class="social-share">
-    <h3>Share This Drop</h3>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://atlquez.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-    </a>
-    <a href="https://twitter.com/intent/tweet?url=https://atlquez.com&text=RocBoi%20Quez%20-%20All%20In%20is%20Live!" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-    </a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://atlquez.com" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
-    </a>
-  </div>
-
-  <!-- QR Code -->
-  <div class="qr-code">
-    <img src="qr-code.png" alt="Scan QR to Visit Site" width="180">
-    <p>Scan this code to visit RocBoi Quez – All In directly</p>
-  </div>
-
-  <!-- Fan Submission Form -->
-  <form action="mailto:gcode@atlquez.com" method="post" enctype="text/plain">
-    <h3>Send a Shoutout to GCode Publishing</h3>
-    <input type="text" name="name" placeholder="Your Name" required><br>
-    <input type="email" name="email" placeholder="Your Email" required><br>
-    <textarea name="message" rows="5" placeholder="Your Message to RocBoi Quez or GCode"></textarea><br>
-    <input type="submit" value="Send Message">
-  </form>
+  }
+</script>
+<div style="text-align:center; margin: 20px;">
+  <button onclick="connectWallet()" style="padding:10px 20px; background:#f90; border:none; border-radius:5px;">Connect MetaMask</button>
+  <p>ENS: <strong>allin-gcodepublishing.cb.id</strong></p>
+</div>
 
 </body>
 </html>
