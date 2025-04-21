@@ -9,16 +9,39 @@
     body {
       margin: 0;
       font-family: 'Courier New', Courier, monospace;
-      background-color: #111;
+      background: linear-gradient(135deg, #111, #000);
       color: #f2f2f2;
       display: flex;
       flex-direction: column;
       align-items: center;
       padding: 2rem;
+      overflow-x: hidden;
+      position: relative;
+    }
+    body::before {
+      content: "";
+      background: url('https://images.unsplash.com/photo-1601758123927-196f047cdd20?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+      opacity: 0.08;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      animation: pulseBg 20s ease-in-out infinite;
+    }
+    @keyframes pulseBg {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
     }
     h1, h2 {
       text-align: center;
       margin-bottom: 0.5rem;
+      text-shadow: 0 0 15px #ff00cc;
+      animation: flicker 3s infinite alternate;
+    }
+    @keyframes flicker {
+      0% { opacity: 1; text-shadow: 0 0 15px #ff00cc; }
+      50% { opacity: 0.8; text-shadow: 0 0 5px #ff0066; }
+      100% { opacity: 1; text-shadow: 0 0 20px #ff00cc; }
     }
     .video-container, .spotify-container {
       width: 100%;
@@ -37,6 +60,23 @@
       height: 80px;
       border-radius: 12px;
     }
+    .social-share {
+      margin: 1rem auto;
+      text-align: center;
+    }
+    .social-share a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      padding: 0.5rem 1rem;
+      background: #333;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .social-share a:hover {
+      background-color: #ff00cc;
+    }
     .tip-section {
       margin-top: 2rem;
       padding: 1rem;
@@ -53,10 +93,38 @@
       margin-top: 0.5rem;
       word-break: break-word;
     }
+    .fan-form {
+      margin-top: 3rem;
+      max-width: 500px;
+      width: 100%;
+      background: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff00cc;
+    }
+    .fan-form input, .fan-form textarea {
+      width: 100%;
+      padding: 0.7rem;
+      margin: 0.5rem 0;
+      border: none;
+      border-radius: 6px;
+      background: #222;
+      color: #fff;
+    }
+    .fan-form button {
+      width: 100%;
+      background: #ff00cc;
+      color: #fff;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
     .footer {
       margin-top: 3rem;
       font-size: 0.9rem;
       color: #999;
+      text-align: center;
     }
     .link {
       color: #00ffc8;
@@ -86,6 +154,15 @@
     <iframe src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
+  <div class="social-share">
+    <a href="https://twitter.com/intent/tweet?url=https://atlquez.com&text=Check%20out%20%22All%20In%22%20by%20RocBoi%20Quez!" target="_blank">X / Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://atlquez.com" target="_blank">Facebook</a>
+    <a href="https://www.reddit.com/submit?url=https://atlquez.com&title=RocBoi%20Quez%20-%20All%20In" target="_blank">Reddit</a>
+    <a href="https://t.me/share/url?url=https://atlquez.com&text=RocBoi%20Quez%20-%20All%20In" target="_blank">Telegram</a>
+    <a href="mailto:?subject=Check out All In&body=https://atlquez.com" target="_blank">Email</a>
+    <a href="#" onclick="navigator.clipboard.writeText('https://atlquez.com'); alert('Link copied!')">Copy Link</a>
+  </div>
+
   <p><strong>Distributed by <a class="link" href="https://www.bentleyrecords.io" target="_blank">BentleyRecords.io</a> | Published by G Code Publishing</strong></p>
 
   <div class="tip-section">
@@ -94,6 +171,17 @@
     <img src="https://api.qrserver.com/v1/create-qr-code/?data=allin-gcodepublishing.cb.id&size=200x200" alt="Crypto Wallet QR Code" class="qr" />
     <div class="wallet">allin-gcodepublishing.cb.id</div>
     <p>Use any Unstoppable Domains-compatible wallet.</p>
+  </div>
+
+  <div class="fan-form">
+    <form action="https://formsubmit.co/gcode@atlquez.com" method="POST">
+      <h3>Send a message to RocBoi Quez</h3>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Your Message or Support Shoutout" required></textarea>
+      <input type="hidden" name="_captcha" value="false">
+      <button type="submit">Send Message</button>
+    </form>
   </div>
 
   <div class="footer">
