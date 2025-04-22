@@ -4,143 +4,159 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RocBoi Quez - All In | GCode Publishing</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Arial Black', sans-serif;
+      background: url('https://rocboi.github.io/AllIn-GCodePublishing/assets/hiphop-bg.gif') center/cover no-repeat fixed;
       color: #fff;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      background-size: 600% 600%;
-      animation: animateBackground 20s ease infinite;
+      text-align: center;
+      animation: fadein 1.5s ease-in-out;
     }
-    @keyframes animateBackground {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+
+    @keyframes fadein {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
+
     header {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      padding: 2rem;
       background-color: rgba(0,0,0,0.7);
     }
+
     header img {
-      max-height: 80px;
-      margin-right: 10px;
+      width: 160px;
     }
+
     h1 {
       font-size: 2.5rem;
-      margin: 20px 0;
-      text-align: center;
-      text-shadow: 0 0 10px #f0f;
+      margin-top: 0.5rem;
     }
-    .video, .spotify {
-      display: flex;
-      justify-content: center;
-      margin: 20px;
+
+    .music-embed {
+      margin: 2rem 0;
     }
-    .video iframe, .spotify iframe {
-      border-radius: 12px;
-      box-shadow: 0 0 20px #000;
+
+    iframe {
+      border: none;
+      max-width: 90%;
     }
-    .share-buttons {
-      text-align: center;
-      margin: 20px;
+
+    .social-share {
+      margin: 1rem auto;
     }
-    .share-buttons a {
-      margin: 10px;
+
+    .social-share a {
+      margin: 0 0.5rem;
       text-decoration: none;
-      font-size: 1.5rem;
-    }
-    form {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      max-width: 400px;
-      margin: 20px auto;
-    }
-    form input, form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-top: 10px;
-      border: none;
-      border-radius: 5px;
-    }
-    form button {
-      margin-top: 10px;
-      padding: 10px;
-      width: 100%;
-      background: #444;
       color: #fff;
-      border: none;
-      border-radius: 5px;
       font-weight: bold;
+      background-color: #111;
+      padding: 10px 15px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
-    .qr-code {
-      text-align: center;
-      margin: 20px;
+
+    .social-share a:hover {
+      background-color: #444;
     }
-    .qr-code img {
-      width: 200px;
+
+    .qr-container {
+      margin: 2rem 0;
+    }
+
+    .qr-container img {
+      width: 220px;
+      border: 4px solid white;
+      border-radius: 15px;
+    }
+
+    form {
+      background-color: rgba(255,255,255,0.1);
+      padding: 1rem;
+      margin: 2rem auto;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 12px;
+    }
+
+    input, textarea {
+      width: 90%;
+      margin: 0.5rem 0;
+      padding: 0.6rem;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 0.6rem 1rem;
+      border: none;
+      background-color: #fff;
+      color: #000;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 2rem;
+      font-size: 0.9rem;
+      background-color: rgba(0,0,0,0.7);
     }
   </style>
+  <script>
+    async function connectMetaMask() {
+      if (typeof window.ethereum !== 'undefined') {
+        try {
+          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+          alert(`Connected: ${accounts[0]}`);
+        } catch (err) {
+          alert('Connection error');
+        }
+      } else {
+        alert('MetaMask not found. Please install it!');
+      }
+    }
+  </script>
 </head>
 <body>
+  <header>
+    <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" />
+    <h1>RocBoi Quez - All In</h1>
+    <p>Distributed by BentleyRecords.io | Label: Slattland Records</p>
+  </header>
 
-<header>
-  <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" />
-  <h1>RocBoi Quez - All In</h1>
-</header>
+  <div class="music-embed">
+    <iframe width="360" height="215" src="https://www.youtube.com/embed/5tZX-LmG5Ac" allowfullscreen></iframe>
+    <br><br>
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator" width="360" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  </div>
 
-<div class="video">
-  <iframe width="360" height="215" src="https://www.youtube.com/embed/5tZX-LmG5Ac" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-</div>
+  <div class="social-share">
+    <a href="https://twitter.com/intent/tweet?text=Check%20out%20RocBoi%20Quez%20-%20All%20In!&url=https://atlquez.com" target="_blank">Share on Twitter</a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://atlquez.com" target="_blank">Share on Facebook</a>
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://atlquez.com" target="_blank">Share on LinkedIn</a>
+  </div>
 
-<div class="spotify">
-  <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator" width="360" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"></iframe>
-</div>
+  <div class="qr-container">
+    <h3>Scan to Connect Web3 Wallet</h3>
+    <img src="https://rocboi.github.io/AllIn-GCodePublishing/assets/qr-gcode-ens.png" alt="GCode ENS QR Code" />
+    <p><strong>ENS:</strong> allingcodepublishing.cb.id</p>
+    <button onclick="connectMetaMask()">Connect MetaMask</button>
+  </div>
 
-<div class="share-buttons">
-  <h2>Share This Hit:</h2>
-  <a href="https://www.facebook.com/sharer/sharer.php?u=https://rocboi.github.io/AllIn-GCodePublishing/" target="_blank">Facebook</a>
-  <a href="https://twitter.com/intent/tweet?url=https://rocboi.github.io/AllIn-GCodePublishing/&text=Check+out+this+heat+from+RocBoi+Quez!" target="_blank">Twitter/X</a>
-  <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://rocboi.github.io/AllIn-GCodePublishing/" target="_blank">LinkedIn</a>
-</div>
+  <form action="mailto:gcode@atlquez.com" method="POST" enctype="text/plain">
+    <h2>Fan Feedback</h2>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" placeholder="Your message" rows="5" required></textarea>
+    <br>
+    <button type="submit">Send</button>
+  </form>
 
-<div class="qr-code">
-  <img src="https://raw.githubusercontent.com/RocBoi/AllIn-GCodePublishing/refs/heads/main/qr-code%20(6).png" alt="Scan QR to visit" />
-  <p>Scan this code to bump it on your phone!</p>
-</div>
-
-<form action="mailto:gcode@atlquez.com" method="POST" enctype="text/plain">
-  <h2>Send Your Love to RocBoi Quez:</h2>
-  <input type="text" name="name" placeholder="Your Name" required />
-  <input type="email" name="email" placeholder="Your Email" required />
-  <textarea name="message" rows="4" placeholder="Your Message to RocBoi Quez..." required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-
-<!-- Web3 Wallet Connection -->
-<script>
-  async function connectWallet() {
-    if (window.ethereum) {
-      try {
-        const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-        alert(`Connected: ${accounts[0]}`);
-      } catch (err) {
-        alert('Connection failed');
-      }
-    } else {
-      alert('MetaMask not detected!');
-    }
-  }
-</script>
-<div style="text-align:center; margin: 20px;">
-  <button onclick="connectWallet()" style="padding:10px 20px; background:#f90; border:none; border-radius:5px;">Connect MetaMask</button>
-  <p>ENS: <strong>allingcodepublishing.cb.id</strong></p>
-</div>
-
+  <footer>
+    <p>Web3 ready with MetaMask | ENS: allingcodepublishing.cb.id</p>
+    <p>Copyright © 2025 GCode Publishing</p>
+  </footer>
 </body>
 </html>
