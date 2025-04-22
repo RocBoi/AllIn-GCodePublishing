@@ -4,141 +4,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RocBoi Quez - All In | GCode Publishing</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <meta name="description" content="Official Web3 Launch of RocBoi Quez - All In, released under Slattland Records & distributed by BentleyRecords.io, powered by GCode Publishing.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #2a003f, #6200a8);
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #2e003e, #000);
       color: white;
       text-align: center;
-      overflow-x: hidden;
     }
     header {
-      padding: 2rem;
-      animation: fadeInDown 2s ease-out;
+      padding: 2rem 1rem;
+      background-color: rgba(0, 0, 0, 0.7);
     }
-    h1, h2 {
-      margin: 0.5rem 0;
-      text-shadow: 2px 2px 5px #000;
+    h1 {
+      font-size: 2.7rem;
+      color: #a64aff;
+      text-transform: uppercase;
     }
-    .logo, .qr-code {
-      width: 120px;
-      margin: 1rem auto;
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 1.3rem;
     }
-    .player-links a {
-      display: inline-block;
-      margin: 1rem;
-      padding: 1rem;
-      color: #fff;
-      text-decoration: none;
-      border: 2px solid white;
-      border-radius: 10px;
-      transition: background 0.3s;
-    }
-    .player-links a:hover {
-      background: #fff;
-      color: #6200a8;
-    }
-    .metamask {
-      margin: 2rem auto;
-    }
-    button {
-      background: #fff;
-      color: #6200a8;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 10px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    button:hover {
-      background: #dcdcdc;
-    }
-    .footer {
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-    form {
-      margin-top: 2rem;
-    }
-    input[type="email"] {
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: none;
-      width: 250px;
-    }
-    .social {
-      margin-top: 2rem;
-    }
-    .social a {
-      margin: 0 0.5rem;
+    a.btn {
+      background-color: #a64aff;
       color: white;
-      font-size: 1.5rem;
+      padding: 0.8rem 1.5rem;
       text-decoration: none;
+      border-radius: 6px;
+      margin: 0.5rem;
+      display: inline-block;
     }
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-30px); }
-      100% { opacity: 1; transform: translateY(0); }
+    a.btn:hover {
+      background-color: #7c26cc;
+    }
+    iframe {
+      border: none;
+      margin-top: 1rem;
+      width: 90%;
+      max-width: 560px;
+      height: 315px;
+    }
+    .qr-logo {
+      margin-top: 2rem;
+      width: 180px;
+      border-radius: 12px;
+    }
+    .spotify-player {
+      margin-top: 2rem;
+    }
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+    footer code {
+      color: #d28eff;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" class="logo" />
     <h1>RocBoi Quez - All In</h1>
-    <h2>Powered by GCode Publishing</h2>
-    <p>Released under Slattland Records | Distributed via <a href="https://bentleyrecords.io" target="_blank" style="color:#fff;text-decoration:underline;">BentleyRecords.io</a></p>
+    <p>Presented by GCode Publishing via Slattland Records<br>
+    Distributed by <a href="https://bentleyrecords.io" style="color:#fff;" target="_blank">BentleyRecords.io</a></p>
+    <a href="https://open.spotify.com/album/1CfwxLh5v4SWj6SQFfD6ou?si=W5hMNAhXTaezlPQUn6vYsA" class="btn" target="_blank">Listen on Spotify</a>
+    <a href="/cb" target="_blank" class="btn">View Wallet ENS</a>
   </header>
 
-  <section class="player-links">
-    <a href="https://youtu.be/5tZX-LmG5Ac?si=U02TIArOMAS9DCh-" target="_blank">Watch on YouTube</a>
-    <a href="https://open.spotify.com/album/1CfwxLh5v4SWj6SQFfD6ou?si=W5hMNAhXTaezlPQUn6vYsA" target="_blank">Listen on Spotify</a>
-  </section>
+  <!-- YouTube Autoplay Embed -->
+  <iframe src="https://www.youtube.com/embed/5tZX-LmG5Ac?autoplay=1&mute=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-  <section class="metamask">
-    <button onclick="connectMetaMask()">Connect MetaMask</button>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem;">For best results, open this site in the MetaMask browser</p>
-    <p>ENS: <a href="https://cb.id/allingcodepublishing" target="_blank" style="color:#fff;text-decoration:underline;">allingcodepublishing.cb.id</a></p>
-  </section>
-
-  <section>
-    <img src="A_QR_code_with_a_GCode_logo_embedded_in_the_center.png" alt="QR Code with ENS & Wallet" class="qr-code" />
-  </section>
-
-  <form action="mailto:gcode@atlquez.com" method="POST" enctype="text/plain">
-    <h3>Subscribe for Fan Mail & Updates</h3>
-    <input type="email" name="email" placeholder="Enter your email" required />
-    <button type="submit">Subscribe</button>
-  </form>
-
-  <div class="social">
-    <a href="https://facebook.com" target="_blank">Fb</a>
-    <a href="https://instagram.com" target="_blank">IG</a>
-    <a href="https://x.com" target="_blank">X</a>
-    <a href="https://threads.net" target="_blank">Threads</a>
+  <!-- Spotify Embed -->
+  <div class="spotify-player">
+    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator&theme=0" width="90%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 
-  <div class="footer">
-    <p>&copy; 2025 GCode Publishing | All Rights Reserved</p>
-  </div>
+  <!-- QR Code with GCode Logo -->
+  <img src="QR_Code_with_GCode_logo.png" alt="Scan to Access ENS Wallet" class="qr-logo" />
 
-  <script>
-    async function connectMetaMask() {
-      if (typeof window.ethereum !== 'undefined' || typeof window.web3 !== 'undefined') {
-        try {
-          const provider = window.ethereum || window.web3.currentProvider;
-          const accounts = await provider.request({ method: 'eth_requestAccounts' });
-          alert(`Connected: ${accounts[0]}`);
-        } catch (error) {
-          alert('MetaMask detected, but permission denied.');
-        }
-      } else {
-        alert('MetaMask not found. Please use MetaMask browser or install it.');
-      }
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 GCode Publishing. Powered by Web3 + ENS</p>
+    <p>Wallet: <code>0x05e07bca157986544e5c41e90a34910d5d5e423b</code><br>
+    ENS: <code>allingcodepublishing.cb.id</code></p>
+  </footer>
+
 </body>
 </html>
