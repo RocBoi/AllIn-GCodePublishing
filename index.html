@@ -4,161 +4,141 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RocBoi Quez - All In | GCode Publishing</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <meta name="description" content="Official Web3 Launch of RocBoi Quez - All In, released under Slattland Records & distributed by BentleyRecords.io, powered by GCode Publishing.">
   <style>
     body {
       margin: 0;
-      font-family: 'Arial Black', sans-serif;
-      background: linear-gradient(to bottom right, #1b0028, #45005e);
-      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #2a003f, #6200a8);
+      color: white;
       text-align: center;
-      animation: fadein 1.5s ease-in-out;
+      overflow-x: hidden;
     }
-
-    @keyframes fadein {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
     header {
       padding: 2rem;
-      background-color: rgba(30,0,50,0.8);
+      animation: fadeInDown 2s ease-out;
     }
-
-    header img {
-      width: 160px;
+    h1, h2 {
+      margin: 0.5rem 0;
+      text-shadow: 2px 2px 5px #000;
     }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-top: 0.5rem;
-      color: #c798ff;
-    }
-
-    .music-embed {
-      margin: 2rem 0;
-    }
-
-    iframe {
-      border: none;
-      max-width: 90%;
-    }
-
-    .social-share {
+    .logo, .qr-code {
+      width: 120px;
       margin: 1rem auto;
     }
-
-    .social-share a {
-      margin: 0 0.5rem;
-      text-decoration: none;
-      color: #fff;
-      font-weight: bold;
-      background-color: #6e1e94;
-      padding: 10px 15px;
-      border-radius: 8px;
-      transition: background-color 0.3s ease;
-    }
-
-    .social-share a:hover {
-      background-color: #a542cc;
-    }
-
-    .qr-container {
-      margin: 2rem 0;
-    }
-
-    .qr-container img {
-      width: 220px;
-      border: 4px solid white;
-      border-radius: 15px;
-    }
-
-    form {
-      background-color: rgba(255,255,255,0.08);
+    .player-links a {
+      display: inline-block;
+      margin: 1rem;
       padding: 1rem;
+      color: #fff;
+      text-decoration: none;
+      border: 2px solid white;
+      border-radius: 10px;
+      transition: background 0.3s;
+    }
+    .player-links a:hover {
+      background: #fff;
+      color: #6200a8;
+    }
+    .metamask {
       margin: 2rem auto;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 12px;
     }
-
-    input, textarea {
-      width: 90%;
-      margin: 0.5rem 0;
-      padding: 0.6rem;
-      border: none;
-      border-radius: 8px;
-    }
-
     button {
-      padding: 0.6rem 1rem;
+      background: #fff;
+      color: #6200a8;
+      padding: 0.8rem 1.5rem;
       border: none;
-      background-color: #c798ff;
-      color: #000;
-      border-radius: 8px;
+      border-radius: 10px;
+      font-size: 1rem;
       cursor: pointer;
-      font-weight: bold;
+      transition: background 0.3s;
     }
-
-    footer {
-      padding: 2rem;
+    button:hover {
+      background: #dcdcdc;
+    }
+    .footer {
+      margin-top: 2rem;
       font-size: 0.9rem;
-      background-color: rgba(30,0,50,0.8);
+    }
+    form {
+      margin-top: 2rem;
+    }
+    input[type="email"] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+    }
+    .social {
+      margin-top: 2rem;
+    }
+    .social a {
+      margin: 0 0.5rem;
+      color: white;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-30px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
   </style>
-  <script>
-    async function connectMetaMask() {
-      if (typeof window.ethereum !== 'undefined') {
-        try {
-          const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-          alert(`Connected: ${accounts[0]}`);
-        } catch (err) {
-          alert('Connection error');
-        }
-      } else {
-        alert('MetaMask not found. Please install it!');
-      }
-    }
-  </script>
 </head>
 <body>
   <header>
-    <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" />
+    <img src="https://drive.google.com/uc?export=view&id=1IyqCd9LmtLxlPLkVYkyyp7OuL8NOnK5i" alt="GCode Logo" class="logo" />
     <h1>RocBoi Quez - All In</h1>
-    <p>Distributed by BentleyRecords.io | Label: Slattland Records</p>
+    <h2>Powered by GCode Publishing</h2>
+    <p>Released under Slattland Records | Distributed via <a href="https://bentleyrecords.io" target="_blank" style="color:#fff;text-decoration:underline;">BentleyRecords.io</a></p>
   </header>
 
-  <div class="music-embed">
-    <iframe width="360" height="215" src="https://www.youtube.com/embed/5tZX-LmG5Ac" allowfullscreen></iframe>
-    <br><br>
-    <iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/1CfwxLh5v4SWj6SQFfD6ou?utm_source=generator" width="360" height="152" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-  </div>
+  <section class="player-links">
+    <a href="https://youtu.be/5tZX-LmG5Ac?si=U02TIArOMAS9DCh-" target="_blank">Watch on YouTube</a>
+    <a href="https://open.spotify.com/album/1CfwxLh5v4SWj6SQFfD6ou?si=W5hMNAhXTaezlPQUn6vYsA" target="_blank">Listen on Spotify</a>
+  </section>
 
-  <div class="social-share">
-    <a href="https://twitter.com/intent/tweet?text=Check%20out%20RocBoi%20Quez%20-%20All%20In!&url=https://atlquez.com" target="_blank">Twitter</a>
-    <a href="https://www.facebook.com/sharer/sharer.php?u=https://atlquez.com" target="_blank">Facebook</a>
-    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://atlquez.com" target="_blank">LinkedIn</a>
-  </div>
-
-  <div class="qr-container">
-    <h3>Scan to Connect Web3 Wallet</h3>
-    <img src="https://rocboi.github.io/AllIn-GCodePublishing/assets/qr-gcode-ens.png" alt="GCode ENS QR Code" />
-    <p><strong>ENS:</strong> allingcodepublishing.cb.id</p>
+  <section class="metamask">
     <button onclick="connectMetaMask()">Connect MetaMask</button>
-  </div>
+    <p style="margin-top: 0.5rem; font-size: 0.9rem;">For best results, open this site in the MetaMask browser</p>
+    <p>ENS: <a href="https://cb.id/allingcodepublishing" target="_blank" style="color:#fff;text-decoration:underline;">allingcodepublishing.cb.id</a></p>
+  </section>
+
+  <section>
+    <img src="A_QR_code_with_a_GCode_logo_embedded_in_the_center.png" alt="QR Code with ENS & Wallet" class="qr-code" />
+  </section>
 
   <form action="mailto:gcode@atlquez.com" method="POST" enctype="text/plain">
-    <h2>Fan Feedback</h2>
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" placeholder="Your message" rows="5" required></textarea>
-    <br>
-    <button type="submit">Send</button>
+    <h3>Subscribe for Fan Mail & Updates</h3>
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Subscribe</button>
   </form>
 
-  <footer>
-    <p>Web3 ready with MetaMask | ENS: allingcodepublishing.cb.id</p>
-    <p>Copyright © 2025 GCode Publishing</p>
-  </footer>
+  <div class="social">
+    <a href="https://facebook.com" target="_blank">Fb</a>
+    <a href="https://instagram.com" target="_blank">IG</a>
+    <a href="https://x.com" target="_blank">X</a>
+    <a href="https://threads.net" target="_blank">Threads</a>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 GCode Publishing | All Rights Reserved</p>
+  </div>
+
+  <script>
+    async function connectMetaMask() {
+      if (typeof window.ethereum !== 'undefined' || typeof window.web3 !== 'undefined') {
+        try {
+          const provider = window.ethereum || window.web3.currentProvider;
+          const accounts = await provider.request({ method: 'eth_requestAccounts' });
+          alert(`Connected: ${accounts[0]}`);
+        } catch (error) {
+          alert('MetaMask detected, but permission denied.');
+        }
+      } else {
+        alert('MetaMask not found. Please use MetaMask browser or install it.');
+      }
+    }
+  </script>
 </body>
 </html>
